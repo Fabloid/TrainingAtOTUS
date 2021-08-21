@@ -12,13 +12,19 @@ namespace MySerializer {
                 i4 = 4,
                 i5 = 5
             };
-            int iterations = 100000;
 
-            Console.WriteLine("Время выполнения моей сериализации - " + MySerialization(testClass, iterations));
-            Console.WriteLine("Время выполнения моей десериализации - " + MyDeserialization(testClass, iterations));
+
+            int iterations;
+            do {
+                Console.Write("Количество замеров (введите целое положительное число больше 0): ");
+            } while (!int.TryParse(Console.ReadLine(), out iterations) || iterations < 0);
+
+            Console.WriteLine($"Время выполнения моей сериализации - {MySerialization(testClass, iterations)}");
+            Console.WriteLine($"Время выполнения моей десериализации - {MyDeserialization(testClass, iterations)}");
             Console.WriteLine();
-            Console.WriteLine("Время выполнения Newtonsoft сериализации - " + NewtonsoftJsonSerialization(testClass, iterations));
-            Console.WriteLine("Время выполнения Newtonsoft десериализации - " + NewtonsoftJsonDeserialization(testClass, iterations));
+            Console.WriteLine($"Время выполнения Newtonsoft сериализации - {NewtonsoftJsonSerialization(testClass, iterations)}");
+            Console.WriteLine($"Время выполнения Newtonsoft десериализации - {NewtonsoftJsonDeserialization(testClass, iterations)}");
+            Console.ReadKey();
         }
 
         private static string MySerialization(TestClass testClass, int iterations) {
