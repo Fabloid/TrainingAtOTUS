@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MySerializer {
     public static class Serializer<T> where T : new() {
-        private static char Separator { get; set; } = ';';
+        private const char Separator = ';';
 
         public static string Serialization(T obj) {
             var type = typeof(T);
@@ -20,7 +20,6 @@ namespace MySerializer {
             var values = new List<string>();
 
             sb.AppendLine(GetHeader(properties, fields));
-            values.Clear();
 
             foreach (var p in properties) {
                 var raw = p.GetValue(obj);
@@ -71,21 +70,23 @@ namespace MySerializer {
                     var column = columns[i];
 
                     if (type.GetProperties().Any()) {
-                        var p = type.GetProperties().First(f => f.Name == column);
+                        var p = type.GetProperties().FirstOrDefault(f => f.Name == column);
+                        if (p != null) {
+                            var converter = TypeDescriptor.GetConverter(p.PropertyType);
+                            var convertedvalue = converter.ConvertFrom(value);
 
-                        var converter = TypeDescriptor.GetConverter(p.PropertyType);
-                        var convertedvalue = converter.ConvertFrom(value);
-
-                        p.SetValue(data, convertedvalue);
+                            p.SetValue(data, convertedvalue);
+                        }
                     }
 
                     if (type.GetFields().Any()) {
-                        var f = type.GetFields().First(f => f.Name == column);
+                        var f = type.GetFields().FirstOrDefault(f => f.Name == column);
+                        if (f != null) {
+                            var converter = TypeDescriptor.GetConverter(f.FieldType);
+                            var convertedvalue = converter.ConvertFrom(value);
 
-                        var converter = TypeDescriptor.GetConverter(f.FieldType);
-                        var convertedvalue = converter.ConvertFrom(value);
-
-                        f.SetValue(data, convertedvalue);
+                            f.SetValue(data, convertedvalue);
+                        }
                     }
                 }
             }
