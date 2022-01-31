@@ -17,7 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegatesEventsConsoleApp",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Csharp9", "Csharp9", "{5F8E81EE-CBE1-4CF2-B39A-01C2BB8CC00B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp9ConsoleApp", "Csharp9ConsoleApp\Csharp9ConsoleApp.csproj", "{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Csharp9ConsoleApp", "Csharp9ConsoleApp\Csharp9ConsoleApp.csproj", "{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson21", "Lesson21", "{CBDC0ED5-FDB1-459A-A8E1-D2C2DB5C40C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multithreading", "Lesson21\Multithreading\Multithreading.csproj", "{E5EE7DF5-AD63-42DC-954A-C458C4E10A85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,10 @@ Global
 		{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5EE7DF5-AD63-42DC-954A-C458C4E10A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5EE7DF5-AD63-42DC-954A-C458C4E10A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5EE7DF5-AD63-42DC-954A-C458C4E10A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5EE7DF5-AD63-42DC-954A-C458C4E10A85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +62,7 @@ Global
 		{8B927EED-5AE5-4EE7-93F3-D4ECDF02E66C} = {B1FC6ECB-DDB5-40BD-A6A3-0B5C1F78163D}
 		{C90082E7-6517-4CA9-B8B3-2890A8C819DB} = {69509FA4-B676-47F8-86A2-9342994D1E0B}
 		{8180C5EA-661D-4DC7-8D30-23CBC0EBAE22} = {5F8E81EE-CBE1-4CF2-B39A-01C2BB8CC00B}
+		{E5EE7DF5-AD63-42DC-954A-C458C4E10A85} = {CBDC0ED5-FDB1-459A-A8E1-D2C2DB5C40C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA6D5158-EA9D-439A-8603-3996F02CF29D}
