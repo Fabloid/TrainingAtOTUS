@@ -24,6 +24,7 @@ namespace GuessTheNumber.Models {
                         return "Введенное число меньше загаданного";
                     }
                 }
-            } }
+            } 
+        }
     }
 }

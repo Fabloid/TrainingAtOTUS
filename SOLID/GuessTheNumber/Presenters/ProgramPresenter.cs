@@ -21,9 +21,10 @@ namespace GuessTheNumber.Presenters {
             do {
                 _outputInput.ShowMessage = "Введите число: ";
                 number = _outputInput.GetEnterData.GetInt();
-                Guesser guesser = new(generator.Number, number);
-                _outputInput.ShowMessage = $"{guesser.Result} {Environment.NewLine}";
+                NewGuesser guesser = new NewGuesser(generator.Number, number);
+                _outputInput.ShowMessage = $"{guesser.Result}{guesser.Advice} {Environment.NewLine}";
             } while (number != generator.Number);
+
             _outputInput.ShowMessage = $"Игра окончена {Environment.NewLine}";
         }
     }
